@@ -58,5 +58,18 @@ uv run python main.py
 
 On the first run, the script will prompt you to authenticate via your browser to generate `gmail_token.json` and `sheets_token.json`. It will also automatically create a new Google Sheet if a `SPREADSHEET_ID` is not provided in your `.env` file.
 
-### Automated Runs
-The project includes a GitHub Actions workflow (`.github/workflows/run.yml`) configured to run every 12 hours. To use it, add your `GOOGLE_CREDENTIALS_JSON`, `GMAIL_TOKEN_JSON`, `SHEETS_TOKEN_JSON`, `OPENROUTER_API_KEY`, and `SPREADSHEET_ID` to your repository's GitHub Secrets.
+### Automated Runs (GitHub Actions)
+The project includes a GitHub Actions workflow (`.github/workflows/run.yml`) configured to run every 12 hours. 
+
+To enable this, you must add your credentials as **Repository Secrets**:
+1. Go to your repository on GitHub.
+2. Click **Settings** > **Secrets and variables** > **Actions**.
+3. Click **New repository secret** and add the following exactly as named:
+
+- `GOOGLE_CREDENTIALS_JSON`: Paste the entire contents of your local `credentials/credentials.json`.
+- `GMAIL_TOKEN_JSON`: Paste the entire contents of your local `credentials/gmail_token.json` (generated after running locally once).
+- `SHEETS_TOKEN_JSON`: Paste the entire contents of your local `credentials/sheets_token.json` (generated after running locally once).
+- `OPENROUTER_API_KEY`: Your OpenRouter API key.
+- `SPREADSHEET_ID`: The ID of your Google Sheet.
+
+The action leverages `uv` and GitHub caching, so dependencies install in seconds, saving precious Actions runner time.
