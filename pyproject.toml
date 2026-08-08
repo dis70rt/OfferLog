@@ -1,0 +1,16 @@
+[project]
+name = "offerlog"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "python-dotenv>=1.0.0",
+    "google-api-python-client>=2.198.0",
+    "google-auth-httplib2>=0.4.1",
+    "google-auth-oauthlib>=1.4.0",
+    "pydantic>=2.13.4",
+    "requests>=2.32.0",
+    "tenacity>=9.0.0",
+    "html2text>=2024.2.26",
+]

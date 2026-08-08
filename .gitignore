@@ -1,0 +1,28 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+venv/
+env/
+
+# Secrets and credentials (CRITICAL)
+credentials/*
+!credentials/.gitkeep
+.env
+
+# State files
+processed_emails.json
+
+# IDEs
+.vscode/
+.idea/
+
+# Logs
+*.log
+.agents
